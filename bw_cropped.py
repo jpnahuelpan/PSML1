@@ -15,7 +15,7 @@ def recorte_imagen(dir:str, imagen:str):
     print(img.shape)
     w = img.shape[1]
     h = img.shape[0]
-    if (w >= 256) or (h >= 256):
+    if (w >= 256) and (h >= 256):
         cropped_image = img[((h // 2)- 128):((h // 2)+ 128), ((w // 2)- 128):((w // 2)+ 128)]
         cv.imwrite("imagenes/cropped/" + imagen, cropped_image)
     else: 
@@ -26,7 +26,6 @@ def blanco_negro(dir:str, imagen:str):
     if(os.path.isfile(dir + imagen)):  
         grey_img = cv.imread(dir + imagen,0) 
         grey_img = cv.cvtColor(grey_img,cv.COLOR_GRAY2BGR)
-
         cv.imwrite(  "imagenes/bw/" + imagen, grey_img)
 
 if __name__ == "__main__":
