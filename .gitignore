@@ -1,0 +1,7 @@
+# folders and zip files.
+venv/
+DIV2K_train_LR_difficult/
+imagenes/
+DIV2K_train_HR/
+imageneshd/
+ds1/
